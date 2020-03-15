@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据合法性校验</title>
+    <link href="./demo.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="all">
+        <form class="sub">
+            <input type="text" name="username" id="username" placeholder="请设置用户名" onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,''))">
+            <input type="text" name="phone" id="phone" placeholder="可用于登录和找回密码">
+            <input type="password" name="pwd" id="pwd" placeholder="请设置登录密码">
+            <input type="text" name="code" id="code" placeholder="请输入验证码">
+            <input type="button" value="获取验证码" id="getCode" disabled>
+            <input type="submit" value="注册" id="sub" disabled>
+            <div id="tip1">
+                <p class="p1">设置后无法更改,中英文均可，最长为14个英文或7个汉字</p>
+            </div>
+            <div id="tip2">
+                <p class="p1">请输入正确的手机号码</p>
+            </div>
+            <div id="tip3">
+                <p class="p1">长度为8到14位字符,且不能有空格和中文</p>
+            </div>
+            <div id="tip4">
+                <p class="p4">用户名、手机号、密码格式正确后获取验证码</p>
+            </div>
+            <div id="tip5">
+                <p class="p4">用户名、手机号、密码和验证码均正确输入后可完成注册</p>
+            </div>
+            <p id='err1'>输入的内容不能为空！</p>
+            <p id='err2'>输入的内容不能为空！</p>
+            <p id='err3'>输入的内容不能为空！</p>
+            <p id="err4">请把用户名控制在14个字节以内</p>
+            <p id="err5">请输入正确的手机号码</p>
+            <p id="err6">密码中不能带有空格</p>
+            <p id="err7">请确保您的密码同时满足长度在8~14位且包含两种类型数据</p>
+        </form>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
