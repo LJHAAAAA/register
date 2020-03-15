@@ -250,8 +250,16 @@ function strNum(str){
 
 // 验证码获取模拟实现
 getCode.onclick = function(){
-    alert('验证码已发送,请注意查收~');
-    getCode.value = "已发送"
+    getCode.disabled = true;
+    var i = 10;
+    var temp = setInterval(function(){
+        i--;
+        console.log(i);
+        getCode.value = `已发送`+`(`+i+`)`;
+        if(i <= 0){
+            clearInterval(temp);
+        }
+    },1000)
 }
 if(user.value != "" && phone.value != "" && pwd.value != "" && err4.style.display != "block" && err5.style.display!="block" && err6.style.display != "block" && err7.style.display != "block"){
     getCode.disabled = false;
